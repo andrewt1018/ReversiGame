@@ -1,5 +1,6 @@
 from env import Reversi
 import sys
+
 if __name__ == "__main__":
     print("Welcome to Reversi!")
     print("What would you like to do?")
@@ -15,7 +16,7 @@ if __name__ == "__main__":
                         choice = int(input())
                         board = Reversi(choice)
                         break
-                    except ValueError and AssertionError:
+                    except:
                         print("Please enter a positive even integer greater than 2!")
 
                 end = False
@@ -30,6 +31,7 @@ if __name__ == "__main__":
                     print(f"Action space: {board.action_space}")
                     print("Type 'Exit' to return to the main menu at any time.")
                     print("Where would you like to place your piece? Enter a coordinate in the form (x,y)")
+                    coordinate = (-1, -1)
                     while True:
                         try:
                             check_exit = input()
@@ -50,12 +52,9 @@ if __name__ == "__main__":
                 print("Bye!")
                 sys.exit()
             else:
-                raise ValueError
+                print("Please enter a valid choice!")
             print("What would you like to do?")
             print("1. Start a new game.")
             print("2. Exit")
         except ValueError:
             print("Please enter a valid choice!")
-
-
-
