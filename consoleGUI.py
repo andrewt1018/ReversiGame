@@ -20,8 +20,8 @@ if __name__ == "__main__":
                         print("Please enter a positive even integer greater than 2!")
 
                 end = False
-                while end == False:
-                    if (board.white_move):
+                while not end:
+                    if board.white_move:
                         print()
                         print("White's turn to play!")
                     else:
